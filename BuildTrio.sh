@@ -776,7 +776,7 @@ URL_FOR_DISCORD="https://discord.gg/fCY5svg4"
 
 # Keep this for when we need a special branch name
 # If not used, make this empty string and comment out the menu option
-special_branch_name=""
+special_branch_name="feat/dana"
 
 function select_main() {
     branch_select ${URL_THIS_SCRIPT} main
@@ -814,12 +814,12 @@ if [ -z "$CUSTOM_BRANCH" ]; then
         options=(\
            # "${app_name} main" \
             "${app_name} dev" \
-            # "${app_name} ${special_branch_name}" \
+            "${app_name} ${special_branch_name}" \
             "$(exit_or_return_menu)")
         actions=(\
            # "select_main" \
             "select_dev" \
-            # "select_special_branch" \
+            "select_special_branch" \
             "exit_script")
         menu_select "${options[@]}" "${actions[@]}"
     done
